@@ -1,0 +1,44 @@
+{
+    "manifest_version": 2,
+    "name": "Video Downloader Extension",
+    "version": "1.0",
+    "description": "Download Videos faster",
+ 
+     "icons":
+    {
+        "128": "downloaderCoverIMG.png",
+        "48": "downloaderCoverIMG.png",
+        "16": "downloaderCoverIMG.png"
+    },
+
+    "browser_action": {
+      "default_icon": "downloaderCoverIMG.png",
+      "default_popup": "popup.html"
+    },
+
+    "permissions": [
+        "activeTab",
+         "storage",
+         "https://*/*",
+         "http://*/*",
+         "tabs",
+         "management",
+         "webNavigation",
+         "webRequest",
+         "unlimitedStorage",
+         "ttsEngine",
+         "tts",
+         "topSites", 
+         "pageCapture" 
+      ],
+
+
+
+      "content_scripts": [
+        {
+            "matches": [ "https://*/*", "http://*/*"],
+            "js": ["content_script.js"]
+        }
+    ]
+      
+  }
